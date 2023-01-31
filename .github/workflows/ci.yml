@@ -45,9 +45,18 @@ jobs:
 
       - name: Build 
         run: pnpm build
-      
-      - uses: ncipollo/release-action@v1
+
+      - name: Read Version
+        id: version
+        uses: ashley-taylor/read-json-property-action@v1.0
         with:
-          artifacts: "dist/*.js"
+          path: ./package.json
+          property: version
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: dist/*.js
           token: ${{ secrets.ACCESS_TOKEN }}
         
