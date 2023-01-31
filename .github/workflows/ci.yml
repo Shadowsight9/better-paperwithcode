@@ -47,7 +47,7 @@ jobs:
         run: pnpm build
       
       - uses: ncipollo/release-action@v1
-          with:
-            artifacts: "dist/*.js"
-            token: ${{ secrets.ACCESS_TOKEN }}
+        with:
+          artifacts: "dist/*.js"
+          token: ${{ secrets.ACCESS_TOKEN }}
         
