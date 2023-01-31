@@ -13,8 +13,12 @@ export default defineConfig({
         icon: 'https://vitejs.dev/logo.svg',
         namespace: 'npm/vite-plugin-monkey',
         match: ['https://paperswithcode.com/dataset/*'],
+        license: 'MIT',
+        description: 'Better paper list view in paperwithcode.com',
+        homepage: 'https://github.com/Shadowsight9/better-paperwithcode',
       },
       build: {
+        minifyCss: false,
         externalGlobals: [
           [
             'vue',
